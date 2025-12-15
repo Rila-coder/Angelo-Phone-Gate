@@ -26,4 +26,4 @@ It allows users to browse, search, and purchase mobile phones, accessories, and 
 
 1. Clone the repository:  
 ```bash
-git clone https://github.com/Rila-Coder/angelo-mobile-gate.git
+git clone https://github.com/Rila-coder/Angelo-Phone-Gate.git
