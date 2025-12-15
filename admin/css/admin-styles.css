@@ -1,0 +1,417 @@
+/* ==========================
+   ANGELO PHONE GATE - ADMIN STYLES
+   admin/css/admin-styles.css
+========================== */
+
+/* ==========================
+   ADMIN LAYOUT
+========================== */
+.admin-container {
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    background: #2c3e50;
+    color: white;
+    min-height: 100vh;
+    padding: 0;
+    position: fixed;
+    width: 250px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.admin-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.admin-header {
+    background: white;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    margin: -20px -20px 20px -20px;
+}
+
+/* ==========================
+   SIDEBAR STYLES
+========================== */
+.sidebar-brand {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+    background: #1a252f;
+}
+
+.sidebar-brand h4 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.sidebar-brand small {
+    color: #bdc3c7;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu .nav-link {
+    color: #bdc3c7;
+    padding: 12px 20px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.sidebar-menu .nav-link:hover,
+.sidebar-menu .nav-link.active {
+    color: white;
+    background: #34495e;
+    border-left-color: #3498db;
+}
+
+.sidebar-menu .nav-link i {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* ==========================
+   MOBILE STYLES
+========================== */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+/* ==========================
+   CARDS & TABLES
+========================== */
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #3498db;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card.products { border-left-color: #e74c3c; }
+.stat-card.orders { border-left-color: #f39c12; }
+.stat-card.customers { border-left-color: #9b59b6; }
+.stat-card.revenue { border-left-color: #27ae60; }
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.recent-table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.filter-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   STATUS BADGES
+========================== */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-active { background: #d4edda; color: #155724; }
+.badge-inactive { background: #f8d7da; color: #721c24; }
+.badge-draft { background: #fff3cd; color: #856404; }
+
+.stock-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
+.badge-instock { background: #d4edda; color: #155724; }
+.badge-lowstock { background: #fff3cd; color: #856404; }
+.badge-outstock { background: #f8d7da; color: #721c24; }
+
+/* ==========================
+   PRODUCTS & IMAGES
+========================== */
+.product-image-small {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.action-buttons .btn {
+    padding: 4px 8px;
+    margin: 2px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+/* Tablet Styles */
+@media (max-width: 992px) {
+    .filter-card .row {
+        margin-bottom: 10px;
+    }
+    
+    .filter-card .col-md-3,
+    .filter-card .col-md-2 {
+        margin-bottom: 10px;
+    }
+    
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        left: -250px;
+    }
+    
+    .admin-sidebar.mobile-open {
+        left: 0;
+    }
+    
+    .admin-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    .admin-header {
+        margin: 0;
+        padding: 60px 15px 15px 15px;
+    }
+    
+    /* Products Table */
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    .product-image-small {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Hide less important columns */
+    .table th:nth-child(3), /* Category */
+    .table td:nth-child(3),
+    .table th:nth-child(4), /* Brand */
+    .table td:nth-child(4) {
+        display: none;
+    }
+    
+    /* Filter Form */
+    .filter-card .row {
+        flex-direction: column;
+    }
+    
+    .filter-card .col-md-3,
+    .filter-card .col-md-2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Header */
+    .admin-header .col-auto {
+        margin-top: 10px;
+    }
+    
+    .admin-header .row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Stats Cards */
+    .stat-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 576px) {
+    .admin-content {
+        padding: 10px;
+    }
+    
+    .mobile-menu-btn {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+    }
+    
+    /* Further simplify table */
+    .table th:nth-child(2), /* SKU */
+    .table td:nth-child(2),
+    .table th:nth-child(5), /* Price */
+    .table td:nth-child(5) {
+        display: none;
+    }
+    
+    /* Compact badges */
+    .status-badge,
+    .stock-badge {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    /* Product name truncate */
+    .table h6 {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+    
+    /* Pagination */
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .page-item {
+        margin-bottom: 5px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 400px) {
+    /* Minimal table view */
+    .table th:nth-child(6), /* Stock */
+    .table td:nth-child(6) {
+        display: none;
+    }
+    
+    /* Only show most essential info */
+    .table th,
+    .table td {
+        padding: 8px 4px;
+    }
+    
+    .admin-content {
+        padding: 5px;
+    }
+    
+    .filter-card,
+    .recent-table {
+        padding: 10px;
+    }
+}
+
+/* Simple Dark Mode */
+.dark-mode {
+    background: #1a1a1a;
+    color: white;
+}
+
+.dark-mode .card {
+    background: #2d2d2d;
+    color: white;
+    border-color: #444;
+}
+
+.dark-mode .form-control {
+    background: #2d2d2d;
+    color: white;
+    border-color: #444;
+}
